@@ -14,16 +14,7 @@
     <title>Espião de Produto Oculto - Inexplor</title>
     <link rel="icon" type="image/x-icon" href="/favicon.png">
     <link rel="icon" type="image/png" href="https://inexplor.com/cecbf4703a2aa92ab378c064f0550d14.png">
-
-    <script>
-        (function () {
-            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-        
-            if (/android|iphone|ipad|ipod|windows phone|webos|blackberry|opera mini|iemobile|mobile/i.test(userAgent)) {
-                window.location.href = "https://espione.inexplor.com/dm";
-            }
-        })();
-    </script>
+    <link rel="canonical" href="https://espione.inexplor.com/">
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
@@ -42,15 +33,22 @@
             position: relative;
         }
 
-        h1 {
-            color: white;
-            text-shadow: 1px 1px 0 #464b52, -1px -1px 0 #464b52, 1px -1px 0 #464b52, -1px 1px 0 #464b52;
-            margin-bottom: 10px;
-            margin-top: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+     h1 {
+    color: white;
+    text-shadow: 1px 1px 0 #464b52, -1px -1px 0 #464b52, 1px -1px 0 #464b52, -1px 1px 0 #464b52;
+    margin-bottom: 10px;
+    margin-top: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.typing {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateY(-2px);
+}
+
 
         .typing {
             border-right: 2px solid #191c1f;
@@ -106,17 +104,25 @@
         }
 
         .error-message {
-            color: white;
-            margin-top: 10px;
-            font-weight: bold;
-            display: none;
-        }
+    color: white;
+    margin-top: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    text-align: center; 
+    display: none; 
+}
+
 
         .button-container {
-            display: flex;
-            gap: 10px;
-            margin-top: 40px;
-        }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
 
         .custom-button {
             background-color: #f04e23;
@@ -146,10 +152,13 @@
     </style>
 </head>
 <body>
-    <h1>🔥 Espione e descubra produtos ocultos na <span id="typing-text" class="typing"></span></h1>
+    <h1>🔥 Espione produtos</h1>
+    <h1>ocultos na <span id="typing-text" class="typing"></span></h1>
+
+
     
     <div class="input-container">
-        <input type="text" id="hotmart-link" placeholder="🌐 Coloque o link da página de pagamento que você copiou aqui" />
+        <input type="text" id="hotmart-link" placeholder="🌐 Coloque o link copiado do checkout" />
         <button onclick="checkLink()">
             <span style="font-size: 24px;">➔</span>
         </button>
@@ -220,7 +229,7 @@
                     const productCode = match[1];
                     const whatsappNumber = '5543991228540';
                     const whatsappMessage = `Consulte o Produto Oculto da ${pattern.name}: ${productCode}`;
-                    const whatsappUrl = `https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}`;
+                    const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}`;
                     
                     window.open(whatsappUrl, '_blank');
                     matched = true;

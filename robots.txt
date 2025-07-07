@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Sitemap: https://espione.inexplor.com/sitemap.xml
